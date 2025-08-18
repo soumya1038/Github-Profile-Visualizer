@@ -1,10 +1,12 @@
+import './index.css'
+
 const Header = () => (
-  <nav>
-    <h1>Github Profile Visualizer</h1>
-    <ul>
-      <li>Home</li>
-      <li>Repositories</li>
-      <li>Analysis</li>
+  <nav className="nav-container">
+    <h1 className="header-heading">Github Profile Visualizer </h1>
+    <ul className="hearer-list">
+      <li className="home">Home</li>
+      <li className="repositories">Repositories</li>
+      <li className="analysis">Analysis</li>
     </ul>
   </nav>
 )
