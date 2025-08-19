@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import Header from '../Header'
 import Profile from '../Profile'
+import NoInternet from '../NoInternet'
 
 import './index.css'
 
@@ -36,11 +37,12 @@ class Home extends Component {
             </div>
           </div>
           {}
-          <Profile />
+          <NoInternet />
         </div>
       </div>
     )
   }
 }
 
+// <Profile />
 export default Home
