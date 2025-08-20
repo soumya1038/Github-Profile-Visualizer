@@ -1,80 +1,42 @@
 .nav-container {
   width: 1140px;
-  height: 32px;
-  top: 32px;
-  left: 150px;
-  angle: 0 deg;
-  opacity: 1;
   display: flex;
   justify-content: space-between;
-  /* border: solid white; */
+  align-items: center;
   margin-bottom: 60px;
 }
+
 .header-heading {
-  width: 259;
-  height: 32;
-  top: 32px;
-  left: 150px;
-  angle: 0 deg;
-  opacity: 1;
   font-family: HK Grotesk;
   font-weight: 700;
   font-size: 24px;
-  leading-trim: NONE;
   line-height: 32px;
-  letter-spacing: 0%;
   color: #f8fafc;
 }
-.hearer-list {
-  width: 40%;
+.nav-logo {
+  text-decoration: none;
+}
+
+.header-list {
   display: flex;
   justify-content: space-around;
-  /* border: solid white; */
+  align-items: center;
   list-style-type: none;
-  margin-bottom: 10px;
+  width: 40%;
+  margin: 0;
+  padding: 0;
 }
-.home {
-  width: 43px;
-  height: 24px;
-  top: 36px;
-  left: 1032px;
-  angle: 0 deg;
-  opacity: 1;
+
+.nav-link {
+  text-decoration: none;
   font-family: HK Grotesk;
   font-weight: 700;
   font-size: 16px;
-  leading-trim: NONE;
   line-height: 24px;
-  letter-spacing: 0%;
+  color: #f8fafc;
+}
+
+/* Highlight active page */
+.nav-link.active {
   color: #3b82f6;
-}
-.repositories {
-  width: 88px;
-  height: 24px;
-  top: 36px;
-  left: 1110px;
-  angle: 0 deg;
-  opacity: 1;
-  font-family: HK Grotesk;
-  font-weight: 700;
-  font-size: 16px;
-  leading-trim: NONE;
-  line-height: 24px;
-  letter-spacing: 0%;
-  color: #f8fafc;
-}
-.analysis {
-  width: 60px;
-  height: 24px;
-  top: 36px;
-  left: 1230px;
-  angle: 0 deg;
-  opacity: 1;
-  font-family: HK Grotesk;
-  font-weight: 700;
-  font-size: 16px;
-  leading-trim: NONE;
-  line-height: 24px;
-  letter-spacing: 0%;
-  color: #f8fafc;
 }

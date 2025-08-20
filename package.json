@@ -20,7 +20,7 @@
     "react-dom": "17.0.1",
     "react-icons": "4.2.0",
     "react-loader-spinner": "4.0.0",
-    "react-router-dom": "5.3.0",
+    "react-router-dom": "6",
     "recharts": "2.0.10",
     "run": "1.4.0",
     "uuid": "8.3.2"

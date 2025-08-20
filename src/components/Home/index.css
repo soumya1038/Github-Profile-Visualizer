@@ -1,6 +1,6 @@
 .home-bg-container {
-  width: 1440;
-  height: 1024;
+
+  min-height: 100vh;
   angle: 0 deg;
   opacity: 1;
   background: #0f172a;
@@ -62,9 +62,9 @@
   align-items: center;
 }
 .search-icon {
-  width: 24;
-  height: 24;
-  opacity: 1;
+  width: 24px;
+  height: 24px;
+  color: #f8fafc;
 }
 .home-img-container {
   width: 538px;
@@ -77,6 +77,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0%;
+  margin-bottom: 50px;
 }
 .home-img {
   width: 538;
@@ -94,4 +96,15 @@
   line-height: 64px;
   letter-spacing: 0%;
   color: #f8fafc;
+}
+.loader-container {
+  /* width: 80;
+  height: 80;
+  top: 472px;
+  left: 680px; */
+  /* border: solid wheat; */
+  height:60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
