@@ -18,7 +18,7 @@ const apiStatusConstants = {
 class Repository extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
-    repositoryData: [],
+    repositoryData: {},
   }
 
   componentDidMount() {
@@ -32,6 +32,11 @@ class Repository extends Component {
     // console.log(username)
   }
 
+  // getOwner = owner => ({
+  //   avatarUrl: owner.avatar_url,
+  //   login: owner.login,
+  // })
+
   renderGetRepoData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {username} = this.context
@@ -44,9 +49,20 @@ class Repository extends Component {
     const response = await fetch(apiurl, options)
     if (response.ok === true) {
       const data = await response.json()
+      const updatedData = data.map(eachItem => ({
+        description: eachItem.description,
+        forksCount: eachItem.forks_count,
+        languages: eachItem.languages.map(each => ({
+          name: each.name,
+          value: each.value,
+        })),
+        name: eachItem.name,
+        owner: eachItem.owner,
+        stargazersCount: eachItem.stargazers_count,
+      }))
       this.setState({
         apiStatus: apiStatusConstants.success,
-        repositoryData: data,
+        repositoryData: updatedData,
       })
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
@@ -62,65 +78,106 @@ class Repository extends Component {
     this.renderGetRepoData(username)
   }
 
-  renderFailureView = () => <NoInternet onclickRetry={this.onclickRetry} />
+  renderFailureView = () => (
+    <div className="nointernet-container">
+      <img
+        src="https://res.cloudinary.com/dqtskutwx/image/upload/v1755620244/Frame_8830_1_kgnu6z.png"
+        alt="failure view"
+        className="nointernet-img"
+      />
+      <p className="nointernet-heading">
+        Something went wrong. Please try again
+      </p>
+      <button
+        className="try-again-button"
+        type="button"
+        onClick={this.onclickRetry}
+      >
+        Try Again
+      </button>
+    </div>
+  )
 
   renderSuccess = () => {
     const {repositoryData} = this.state
+    const repositoriesLength = Object.keys(repositoryData).length === 0
     return (
-      <div className="repository-container">
-        <h1 key="title">Repositories</h1>
-        <div className="repository-list">
-          <ul>
-            {repositoryData.map(repo => (
-              <li key={repo.id}>
-                <Link
-                  className="link"
-                  key={repo.id}
-                  to={`/repositories/${repo.name}`}
-                >
-                  <div className="repository-card">
-                    <div>
-                      <h1 className="repository-title">{repo.name}</h1>
-                      <img
-                        src={repo.owner.avatar_url}
-                        alt={repo.owner.login}
-                        className="repo-image"
-                      />
-                    </div>
-                    <p className="repository-description">{repo.description}</p>
+      <div>
+        {repositoriesLength ? (
+          <div>
+            <img
+              src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757397146/Layer_3_2x_dybiao.png"
+              alt="no repositories"
+            />
+            <h1 className="noDataHeading">No Repositories Found!</h1>
+          </div>
+        ) : (
+          <div className="repository-container">
+            <h1 key="title">Repositories</h1>
+            <div className="repository-list">
+              <ul>
+                {repositoryData.map(repo => {
+                  const {
+                    name,
+                    description,
+                    languages,
+                    stargazersCount,
+                    forksCount,
+                    owner,
+                  } = repo
+                  const {login} = owner
 
-                    <div className="language-tags">
-                      {repo.languages.map(tags => (
-                        <span
-                          key={tags.value}
-                          className={`language-tag ${tags.name.toLowerCase()}`}
-                        >
-                          {tags.name}
-                        </span>
-                      ))}
-                    </div>
-                    <ul className="stats">
-                      <li>
-                        <img
-                          src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757412650/Icon_e3w7ms.png"
-                          alt="star"
-                        />
-                        {repo.stargazers_count}
-                      </li>
-                      <li>
-                        <img
-                          src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757412650/Git_3_bax2ip.png"
-                          alt="fork"
-                        />
-                        {repo.forks_count}
-                      </li>
-                    </ul>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+                  return (
+                    <li key={name}>
+                      <Link className="link" to={`/repositories/${name}`}>
+                        <div className="repository-card">
+                          <div>
+                            <h1 className="repository-title">{name}</h1>
+                            <img
+                              src={owner.avatar_url}
+                              alt={login}
+                              className="repo-image"
+                            />
+                          </div>
+                          <p className="repository-description">
+                            {description}
+                          </p>
+
+                          <div className="language-tags">
+                            {languages.map(tags => (
+                              <p
+                                key={tags.value}
+                                className={`language-tag ${tags.name.toLowerCase()}`}
+                              >
+                                {tags.name}
+                              </p>
+                            ))}
+                          </div>
+                          <div className="stats">
+                            <div>
+                              <img
+                                src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757412650/Icon_e3w7ms.png"
+                                alt="star"
+                              />
+                              <p>{stargazersCount}</p>
+                            </div>
+                            <div>
+                              <img
+                                src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757412650/Git_3_bax2ip.png"
+                                alt="fork"
+                              />
+                              <p>{forksCount}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     )
   }

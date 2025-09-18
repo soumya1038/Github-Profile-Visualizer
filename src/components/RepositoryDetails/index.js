@@ -35,6 +35,11 @@ class RepositoryDetails extends Component {
     // console.log(repoName)
   }
 
+  getOwner = owner => ({
+    avatarUrl: owner.avatar_url,
+    login: owner.login,
+  })
+
   getRepoDetails = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {
@@ -50,9 +55,24 @@ class RepositoryDetails extends Component {
     const response = await fetch(apiurl, options)
     if (response.ok === true) {
       const data = await response.json()
+      const updatedData = {
+        name: data.name,
+        description: data.description,
+        languages: data.lanuages,
+        stargazersCount: data.stargazers_count,
+        forksCount: data.forks_count,
+        commitsCount: data.network_count,
+        issuesCount: data.open_issues_count,
+        contributors: data.contributors.map(contributor => ({
+          avatarUrl: contributor.avatar_url,
+          id: contributor.id,
+        })),
+        owner: this.getOwner(data.owner),
+        watchersCount: data.watchers_count,
+      }
       this.setState({
         apiStatus: apiStatusConstants.success,
-        repositoryData: data,
+        repositoryData: updatedData,
       })
       // console.log(data)
     } else {
@@ -66,74 +86,97 @@ class RepositoryDetails extends Component {
 
   onclickRetry = () => this.getRepoDetails()
 
-  renderFailureView = () => <NoInternet onclickRetry={this.onclickRetry} />
+  renderFailureView = () => (
+    <div className="nointernet-container">
+      <img
+        src="https://res.cloudinary.com/dqtskutwx/image/upload/v1755620244/Frame_8830_1_kgnu6z.png"
+        alt="failure view"
+        className="nointernet-img"
+      />
+      <p className="nointernet-heading">
+        Something went wrong. Please try again
+      </p>
+      <button
+        className="try-again-button"
+        type="button"
+        onClick={this.onclickRetry}
+      >
+        Try Again
+      </button>
+    </div>
+  )
 
   renderSuccess = () => {
     const {repositoryData} = this.state
-    // console.log(repositoryData)
+    const {
+      name,
+      description,
+      languages,
+      forksCount,
+      stargazersCount,
+      watchersCount,
+      issuesCount,
+      contributors,
+      owner,
+    } = repositoryData
+    const {avatarUrl, login} = owner
 
     return (
       <div className="repo-success-container">
         <div>
-          <h1 className="repo-title">{repositoryData.name}</h1>
-          <img
-            src={repositoryData.owner.avatar_url}
-            alt={repositoryData.owner.login}
-            className="repo-image"
-          />
+          <h1 className="repo-title">{name}</h1>
+          <img src={avatarUrl} alt={login} className="repo-image" />
         </div>
-        <p className="repo-description">{repositoryData.description}</p>
+        <p className="repo-description">{description}</p>
 
-        <ul className="language-tags">
-          {repositoryData.lanuages.map(each => (
-            <li key={each.value} className="language-tag">
+        <div className="language-tags">
+          {languages.map(each => (
+            <p key={each.value} className="language-tag">
               {each.name}
-            </li>
+            </p>
           ))}
-        </ul>
+        </div>
 
-        <ul className="stats">
-          <li className="stat-item">
+        <div className="stats">
+          <div className="stat-item">
             <img
               src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757412650/Icon_e3w7ms.png"
               alt="star"
               className="stat-icon"
             />
-            {repositoryData.stargazers_count}
-          </li>
-          <li className="stat-item">
+            <p>{stargazersCount}</p>
+          </div>
+          <div className="stat-item">
             <img
               src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757412650/Git_3_bax2ip.png"
               alt="fork"
               className="stat-icon"
             />
-            {repositoryData.forks_count}
-          </li>
-        </ul>
+            <p>{forksCount}</p>
+          </div>
+        </div>
 
         <div className="counts-container">
           <p className="count-label">Watchers Counts</p>
-          <p>{repositoryData.watchers_count}</p>
+          <p>{watchersCount}</p>
           <div className="count-box">
             <p className="count-label">Commits Count</p>
             <p className="count-value">{repositoryData.network_count}</p>
           </div>
           <div className="count-box">
             <p className="count-label">Issues Counts</p>
-            <p className="count-value">{repositoryData.open_issues_count}</p>
+            <p className="count-value">{issuesCount}</p>
           </div>
         </div>
 
         <div className="contributors-section">
-          <h1 className="contributors-title">Contributors</h1>
-          <p className="contributors-count">
-            {repositoryData.contributors.length} Members
-          </p>
+          <h1 className="contributors-title">Contributors :</h1>
+          <p className="contributors-count">{contributors.length} Members</p>
           <ul className="contributors-list">
-            {repositoryData.contributors.slice(0, 5).map(img => (
+            {contributors.slice(0, 5).map(img => (
               <li key={img.id} className="contributor-item">
                 <img
-                  src={img.avatar_url}
+                  src={img.avatarUrl}
                   alt="contributor profile"
                   className="contributor-img"
                 />
@@ -148,8 +191,8 @@ class RepositoryDetails extends Component {
         </div>
 
         <div className="languages-section">
-          <h1 className="languages-title">Languages</h1>
-          <Piechart data={repositoryData.lanuages} />
+          <h1 className="languages-title">Languages :</h1>
+          <Piechart data={languages} />
         </div>
       </div>
     )

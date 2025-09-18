@@ -36,7 +36,7 @@ class Analysis extends Component {
   renderGetRepoData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {username} = this.context
-    const apiurl = `https://apis2.ccbp.in/gpv/profile-summary/${username}?api_key=${process.env.REACT_APP_GIT_TOKEN}`
+    const apiurl = `https://apis2.ccbp.in/gpv/profile-summary/${username}`
     const options = {
       headers: {},
       method: 'GET',
@@ -62,17 +62,35 @@ class Analysis extends Component {
     this.renderGetRepoData(username)
   }
 
-  renderFailureView = () => <NoInternet onclickRetry={this.onclickRetry} />
+  renderFailureView = () => (
+    <div className="nointernet-container">
+      <img
+        src="https://res.cloudinary.com/dqtskutwx/image/upload/v1755620244/Frame_8830_1_kgnu6z.png"
+        alt="failure view"
+        className="nointernet-img"
+      />
+      <p className="nointernet-heading">
+        Something went wrong. Please try again
+      </p>
+      <button
+        className="try-again-button"
+        type="button"
+        onClick={this.onclickRetry}
+      >
+        Try Again
+      </button>
+    </div>
+  )
 
   renderSuccess = () => {
     const {repositoryData} = this.state
     // Convert object → array for recharts
-    const chartData = Object.entries(repositoryData.quarterCommitCount).map(
-      ([key, value]) => ({
-        name: key,
-        commits: value,
-      }),
-    )
+    const quarterCommitSlicedData = Object.entries(
+      repositoryData.quarterCommitCount,
+    ).map(([key, value]) => ({
+      name: key,
+      commits: value,
+    }))
     const langRepoData = Object.entries(repositoryData.langRepoCount).map(
       ([name, value]) => ({
         name,
@@ -92,31 +110,48 @@ class Analysis extends Component {
       }),
     )
     const {user} = repositoryData
+    const analysisListLength = Object.keys(repoCommitData).length === 0
 
     return (
       <div>
-        <h1>Analysis</h1>
-        <div>
-          <h1>{user.login}</h1>
-          <img src={user.avatarUrl} alt={user.login} className="repo-image" />
-        </div>
-        <LinearChart data={chartData} />
-        <div>
+        {analysisListLength ? (
           <div>
-            <h1>Language Per Repos</h1>
-            <Piechart data={langRepoData} />
+            <img
+              src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757397146/Layer_3_2x_dybiao.png"
+              alt="no analysis"
+            />
+            <h1 className="noDataHeading">No Analysis Found!</h1>
           </div>
+        ) : (
+          <div>
+            <h1>analysis</h1>
+            <div>
+              <h1>{user.login}</h1>
+              <img
+                src={user.avatarUrl}
+                alt={user.login}
+                className="repo-image"
+              />
+            </div>
+            <LinearChart quarterCommitCount={quarterCommitSlicedData} />
+            <div>
+              <div>
+                <h1>Language Per Repos</h1>
+                <Piechart data={langRepoData} />
+              </div>
 
-          <div>
-            <h1>Language Per Commits</h1>
-            <Piechart data={langCommitData} />
-          </div>
+              <div>
+                <h1>Language Per Commits</h1>
+                <Piechart data={langCommitData} />
+              </div>
 
-          <div>
-            <h1>Commits Per Repo</h1>
-            <Piechart data={repoCommitData} />
+              <div>
+                <h1>Commits Per Repo</h1>
+                <Piechart data={repoCommitData} />
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     )
   }

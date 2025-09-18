@@ -8,12 +8,12 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-export default function LinearChart({data}) {
+export default function LinearChart({quarterCommitCount}) {
   return (
     <div style={{width: '100%', height: 200}}>
       <ResponsiveContainer>
         <LineChart
-          data={data}
+          data={quarterCommitCount}
           margin={{
             top: 5,
             right: 30,

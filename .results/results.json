@@ -56,27 +56,21 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_113",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"name\" in language from the GitHub user repository item details responses received",
-      "errorMessages": [
-        "\nExpected: \"P\"\nReceived: \"LI\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_114",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"stargazers_count\" from the GitHub user repository item details responses received",
-      "errorMessages": [
-        "\nExpected: \"P\"\nReceived: \"LI\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_115",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"forks_count\" from the GitHub user repository item details responses received",
-      "errorMessages": [
-        "\nExpected: \"P\"\nReceived: \"LI\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_116",
@@ -141,98 +135,170 @@
       ]
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_33",
+      "test_case_id": "RJSCPXLLA7_TEST_7",
       "evaluation_result": "CORRECT",
-      "title": "Home Route should consist of an HTML main heading element in the Header with text content as \"GitHub Profile Visualizer\"",
+      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML image element with alt attribute value as \"empty analysis\"",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_34",
+      "test_case_id": "RJSCPXLLA7_TEST_8",
       "evaluation_result": "CORRECT",
-      "title": "Home Route should consist of an HTML main heading element in the Header with text content as \"GitHub Profile Visualizer\", wrapped with Link from react-router-dom",
+      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML main heading element with text content as \"No Data Found\"",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_35",
+      "test_case_id": "RJSCPXLLA7_TEST_9",
       "evaluation_result": "CORRECT",
-      "title": "Home Route should consist of at least one HTML unordered list element to display the list of nav items in the Header",
+      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML paragraph element with text content as \"GitHub username is empty, please provide a valid username for Analysis\"",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_36",
+      "test_case_id": "RJSCPXLLA7_TEST_10",
       "evaluation_result": "CORRECT",
-      "title": "Home Route should consist of HTML list elements to display the nav items in the Header",
+      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML button element with text content as \"Go to Home\"",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_37",
+      "test_case_id": "RJSCPXLLA7_TEST_11",
       "evaluation_result": "CORRECT",
-      "title": "Home Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty and \"Go to Home\" button is clicked, then the page should be navigated to Home Route",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_38",
+      "test_case_id": "RJSCPXLLA7_TEST_12",
       "evaluation_result": "CORRECT",
-      "title": "Repository Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+      "title": "When the HTTP GET request in the Home Route is successful and the Analysis Route is opened, then an HTTP GET request should be made to the GitHub user analysis API URL with path parameter as the username provided search input of the Home Route",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_39",
+      "test_case_id": "RJSCPXLLA7_TEST_13",
+      "evaluation_result": "CORRECT",
+      "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is empty, then the page should consist of an HTML image element with alt attribute value as \"empty analysis\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_14",
       "evaluation_result": "INCORRECT",
-      "title": "Analysis Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+      "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is valid, then the page should consist of an HTML main heading element with text content as \"Analysis\"",
       "errorMessages": [
         "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_40",
-      "evaluation_result": "CORRECT",
-      "title": "Repository Item Details Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_41",
-      "evaluation_result": "CORRECT",
-      "title": "Home Route should consist of an HTML element with text content as \"Repositories\" wrapped with Link from react-router-dom",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_42",
-      "evaluation_result": "CORRECT",
-      "title": "Home Route should consist of an HTML element with text content as \"Analysis\" wrapped with Link from react-router-dom",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_43",
-      "evaluation_result": "CORRECT",
-      "title": "When the \"GitHub Profile Visualizer\" in the Header is clicked, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_44",
-      "evaluation_result": "CORRECT",
-      "title": "When the Home link in the Header is clicked in the Repository Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_45",
+      "test_case_id": "RJSCPXLLA7_TEST_15",
       "evaluation_result": "INCORRECT",
-      "title": "When the Home link in the Header is clicked in the Analysis Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
+      "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is invalid, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
+      "errorMessages": [
+        "Error: Unable to find role=\"img\""
+      ]
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_16",
+      "evaluation_result": "CORRECT",
+      "title": "When the HTTP GET request in the Home Route is successful and the Analysis Route is opened, an HTML container element with data-testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_17",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML image element with alt and src as the values of the keys \"login\" and \"avatarUrl\" in user from the GitHub user analysis details responses received",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_18",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"login\" in user from the GitHub user analysis details responses received",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_19",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Analysis\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_20",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Language Per Repos\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_21",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Language Per Commits\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_22",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Commits Per Repo\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_23",
+      "evaluation_result": "INCORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Line chart",
       "errorMessages": [
         "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_46",
+      "test_case_id": "RJSCPXLLA7_TEST_24",
+      "evaluation_result": "INCORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Line chart with data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
+      "errorMessages": [
+        "Error: Unable to find an element with the text: /2012-Q1/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
+      ]
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_25",
       "evaluation_result": "CORRECT",
-      "title": "When the Home link in the Header is clicked in the Repository Item Details Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_47",
+      "test_case_id": "RJSCPXLLA7_TEST_26",
       "evaluation_result": "CORRECT",
-      "title": "When the Repositories link in the Header is clicked in the Home Route, then the page should be navigated to Repository Route and consist of HTML main heading element with text content as the value of the key \"title\" from the GitHub user repositories details responses received",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Language Per Repos\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
       "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_27",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Language Per Commits\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_28",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Commits Per Repo (Top 10)\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_29",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_30",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML paragraph element with text content as \"Something went wrong. Please try again\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_31",
+      "evaluation_result": "CORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_32",
+      "evaluation_result": "INCORRECT",
+      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to GitHub user analysis details API URL",
+      "errorMessages": [
+        "\nExpected substring: \"https://apis2.ccbp.in/gpv/profile-summary/kentcdodds\"\nReceived string:    \"https://apis2.ccbp.in/gpv/profile-details/kentcdodds?api_key=undefined\""
+      ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_81",
@@ -326,43 +392,33 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_95",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"name\" in language from the GitHub user repositories details responses received",
-      "errorMessages": [
-        "\nExpected: \"P\"\nReceived: \"SPAN\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_96",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"stargazers_count\" from the GitHub user repositories details responses received",
-      "errorMessages": [
-        "\nExpected: \"P\"\nReceived: \"LI\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_97",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"forks_count\" in language from the GitHub user repositories details responses received",
-      "errorMessages": [
-        "\nExpected: \"P\"\nReceived: \"LI\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_98",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request returns the repositories list as empty, then the page should consist of an HTML image element with alt attribute value as \"no repositories\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_99",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request returns the repositories list as empty, then the page should consist of an HTML main heading element with text content as \"No Repositories Found\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"heading\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_100",
@@ -601,170 +657,98 @@
       ]
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_7",
+      "test_case_id": "RJSCPXLLA7_TEST_33",
       "evaluation_result": "CORRECT",
-      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML image element with alt attribute value as \"empty analysis\"",
+      "title": "Home Route should consist of an HTML main heading element in the Header with text content as \"GitHub Profile Visualizer\"",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_8",
+      "test_case_id": "RJSCPXLLA7_TEST_34",
       "evaluation_result": "CORRECT",
-      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML main heading element with text content as \"No Data Found\"",
+      "title": "Home Route should consist of an HTML main heading element in the Header with text content as \"GitHub Profile Visualizer\", wrapped with Link from react-router-dom",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_9",
+      "test_case_id": "RJSCPXLLA7_TEST_35",
       "evaluation_result": "CORRECT",
-      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML paragraph element with text content as \"GitHub username is empty, please provide a valid username for Analysis\"",
+      "title": "Home Route should consist of at least one HTML unordered list element to display the list of nav items in the Header",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_10",
+      "test_case_id": "RJSCPXLLA7_TEST_36",
       "evaluation_result": "CORRECT",
-      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML button element with text content as \"Go to Home\"",
+      "title": "Home Route should consist of HTML list elements to display the nav items in the Header",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_11",
+      "test_case_id": "RJSCPXLLA7_TEST_37",
       "evaluation_result": "CORRECT",
-      "title": "When the Analysis Route is opened initially and the username in the Home Route is empty and \"Go to Home\" button is clicked, then the page should be navigated to Home Route",
+      "title": "Home Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_12",
+      "test_case_id": "RJSCPXLLA7_TEST_38",
       "evaluation_result": "CORRECT",
-      "title": "When the HTTP GET request in the Home Route is successful and the Analysis Route is opened, then an HTTP GET request should be made to the GitHub user analysis API URL with path parameter as the username provided search input of the Home Route",
+      "title": "Repository Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_13",
-      "evaluation_result": "CORRECT",
-      "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is empty, then the page should consist of an HTML image element with alt attribute value as \"empty analysis\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_14",
+      "test_case_id": "RJSCPXLLA7_TEST_39",
       "evaluation_result": "INCORRECT",
-      "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is valid, then the page should consist of an HTML main heading element with text content as \"Analysis\"",
+      "title": "Analysis Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
       "errorMessages": [
         "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_15",
+      "test_case_id": "RJSCPXLLA7_TEST_40",
+      "evaluation_result": "CORRECT",
+      "title": "Repository Item Details Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_41",
+      "evaluation_result": "CORRECT",
+      "title": "Home Route should consist of an HTML element with text content as \"Repositories\" wrapped with Link from react-router-dom",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_42",
+      "evaluation_result": "CORRECT",
+      "title": "Home Route should consist of an HTML element with text content as \"Analysis\" wrapped with Link from react-router-dom",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_43",
+      "evaluation_result": "CORRECT",
+      "title": "When the \"GitHub Profile Visualizer\" in the Header is clicked, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_44",
+      "evaluation_result": "CORRECT",
+      "title": "When the Home link in the Header is clicked in the Repository Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
+      "errorMessages": []
+    },
+    {
+      "test_case_id": "RJSCPXLLA7_TEST_45",
       "evaluation_result": "INCORRECT",
-      "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is invalid, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_16",
-      "evaluation_result": "CORRECT",
-      "title": "When the HTTP GET request in the Home Route is successful and the Analysis Route is opened, an HTML container element with data-testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_17",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML image element with alt and src as the values of the keys \"login\" and \"avatarUrl\" in user from the GitHub user analysis details responses received",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_18",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"login\" in user from the GitHub user analysis details responses received",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_19",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Analysis\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_20",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Language Per Repos\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_21",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Language Per Commits\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_22",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Commits Per Repo\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_23",
-      "evaluation_result": "INCORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Line chart",
+      "title": "When the Home link in the Header is clicked in the Analysis Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
       "errorMessages": [
         "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_24",
-      "evaluation_result": "INCORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Line chart with data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
-      "errorMessages": [
-        "Error: Unable to find an element with the text: /2012-Q1/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
-      ]
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_25",
+      "test_case_id": "RJSCPXLLA7_TEST_46",
       "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart",
+      "title": "When the Home link in the Header is clicked in the Repository Item Details Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
       "errorMessages": []
     },
     {
-      "test_case_id": "RJSCPXLLA7_TEST_26",
+      "test_case_id": "RJSCPXLLA7_TEST_47",
       "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Language Per Repos\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
+      "title": "When the Repositories link in the Header is clicked in the Home Route, then the page should be navigated to Repository Route and consist of HTML main heading element with text content as the value of the key \"title\" from the GitHub user repositories details responses received",
       "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_27",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Language Per Commits\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_28",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Commits Per Repo (Top 10)\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_29",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_30",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML paragraph element with text content as \"Something went wrong. Please try again\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_31",
-      "evaluation_result": "CORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
-      "errorMessages": []
-    },
-    {
-      "test_case_id": "RJSCPXLLA7_TEST_32",
-      "evaluation_result": "INCORRECT",
-      "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to GitHub user analysis details API URL",
-      "errorMessages": [
-        "\nExpected substring: \"https://apis2.ccbp.in/gpv/profile-summary/kentcdodds\"\nReceived string:    \"https://apis2.ccbp.in/gpv/profile-details/kentcdodds?api_key=undefined\""
-      ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_1",
