@@ -5,58 +5,71 @@ import './index.css'
 
 const Profile = props => {
   const {userData} = props
+  const {
+    avatarUrl,
+    name,
+    login,
+    bio,
+    blog,
+    followers,
+    following,
+    publicRepos,
+    company,
+    location,
+    organizationsUrl,
+  } = userData
+
   return (
-    <div className="profile-container">
-      <div className="profile-view">
-        <img
-          src={userData.avatar_url}
-          alt={userData.login}
-          className="user-logo-img"
-        />
-        <h1 className="userName">{userData.name}</h1>
-        <p className="user-name">{userData.login}</p>
-        <p className="user-description">{userData.bio}</p>
-        <ul className="user-list">
-          <li className="each-value-container">
-            <p className="value">{userData.followers}</p>
-            <p className="followers">FOLLOWERS</p>
-          </li>
-          <hr className="line" />
-          <li className="each-value-container">
-            <p className="value">{userData.following}</p>
-            <p className="followers">FOLLOWING</p>
-          </li>
-          <hr className="line" />
-          <li className="each-value-container">
-            <p className="value">{userData.public_repos}</p>
-            <p className="followers">public repos</p>
-          </li>
-        </ul>
-
-        <ul className="user-details-list">
-          <li className="each-compani-container">
-            <p className="compani">Company</p>
-            <div className="compani-logo-name-container">
-              <RiBuildingLine className="compani-logo" />
-              <p className="compani-name">{userData.company}</p>
+    <div data-testid="repoItem" className="repo-item">
+      <div className="profileDetailsContainer">
+        <img src={avatarUrl} alt={name} className="avatar-url" />
+        <p className="login">{login}</p>
+        <h1 className="name">{name}</h1>
+        <p className="bio">BIO</p>
+        <p className="bio">{bio}</p>
+        <p className="bio">Blog</p>
+        <p className="bio">{blog}</p>
+        <div className="followers-following-public-container">
+          <div className="followers-container">
+            <p className="followers">{followers}</p>
+            <p className="followers-heading">FOLLOWERS</p>
+          </div>
+          <hr className="hor-line" />
+          <div className="following-container">
+            <p className="followers">{following}</p>
+            <p className="followers-heading">FOLLOWING</p>
+          </div>
+          <hr className="hor-line" />
+          <div className="pubic-repos-container">
+            <p className="followers">{publicRepos}</p>
+            <p className="followers-heading">PUBLIC REPOS</p>
+          </div>
+        </div>
+        <div className="bottom-container">
+          <div className="company-container">
+            <p className="company-heading">Company</p>
+            <div className="companyUrl">
+              <RiBuildingLine className="icon-style" />
+              <p className="company">{company}</p>
             </div>
-          </li>
-          <li className="each-url-container">
-            <p className="compani-url-name">Company Url</p>
-            <div className="compani-url-container">
-              <IoMdLink className="compani-url-logo" />
-              <p className="compani-url">{userData.organizations_url}</p>
+          </div>
+          <div className="company-container">
+            <p className="company-heading">Location</p>
+            <div className="companyUrl">
+              <IoLocationOutline className="icon-style" />
+              <p className="company">{location}</p>
             </div>
-          </li>
-
-          <li className="compani-location-container">
-            <p className="location">Location</p>
-            <div className="location-container">
-              <IoLocationOutline className="compani-location-logo" />
-              <p className="compani-location">{userData.location}</p>
+          </div>
+          <div className="company-container">
+            <h1 className="company-heading">Company Url</h1>
+            <div className="companyUrl">
+              <IoMdLink className="icon-style" />
+              <a href={organizationsUrl} className="company">
+                {organizationsUrl}
+              </a>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   )

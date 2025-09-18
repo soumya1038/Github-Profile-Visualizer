@@ -2,11 +2,9 @@
   "test_case_results": [
     {
       "test_case_id": "RJSCPXLLA7_TEST_104",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository Item Details Route is opened, an HTTP GET request should be made to the GitHub user repository item details API URL with the \"user\" and \"repo\" names as the path parameters",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_105",
@@ -16,66 +14,52 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_106",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When \"/repositories/:reponame\" is provided as the URL path when the username in the Home Route is valid, then the page should consist of an HTML main heading element with text content as \"Repositories\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_107",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository Item Details Route is opened, an HTML container element with data-testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_108",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as \"Watchers Counts\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_109",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as \"Issues Counts\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_110",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML main heading element with text content as \"Contributors\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_111",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML main heading element with text content as \"Languages\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_112",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"name\" from the GitHub user repository item details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_113",
       "evaluation_result": "INCORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"name\" in language from the GitHub user repository item details responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected: \"P\"\nReceived: \"LI\""
       ]
     },
     {
@@ -83,7 +67,7 @@
       "evaluation_result": "INCORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"stargazers_count\" from the GitHub user repository item details responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected: \"P\"\nReceived: \"LI\""
       ]
     },
     {
@@ -91,87 +75,69 @@
       "evaluation_result": "INCORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"forks_count\" from the GitHub user repository item details responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected: \"P\"\nReceived: \"LI\""
       ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_116",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"watchers_count\" from the GitHub user repository item details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_117",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"open_issues_count\" in language from the GitHub user repository item details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_118",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML image element with alt as \"contributor profile\" and src attribute value of the key \"avatar_url\" in contributors from the GitHub user repository item details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_119",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an Pie chart with data values of the key \"lanuages\" from the GitHub user repository item details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_120",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML unordered list element to display the languages List from the GitHub user repository item details response received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_121",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Repository Item Details Route is successful, then the page should consist of an HTML list elements to display the languages from the GitHub user repository item details response received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_122",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request made to GitHub user repository details API URL in the Repository Item Details Route is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_123",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request made to GitHub user repository details API URL in the Repository Item Details Route is unsuccessful, then the page should consist of an HTML paragraph element with text content as \"Something went wrong. Please try again\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_124",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request made to GitHub user repository details API URL in the Repository Item Details Route is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_125",
       "evaluation_result": "INCORRECT",
       "title": "When the HTTP GET request made to GitHub user repository details API URL in the Repository Item Details Route is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to GitHub user repository details API URL",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected substring: \"https://apis2.ccbp.in/gpv/specific-repo/kentcdodds/.kenv\"\nReceived string:    \"https://apis2.ccbp.in/gpv/repos/kentcdodds?api_key=undefined\""
       ]
     },
     {
@@ -206,27 +172,23 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_38",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "Repository Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_39",
       "evaluation_result": "INCORRECT",
       "title": "Analysis Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_40",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "Repository Item Details Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_41",
@@ -242,75 +204,59 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_43",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the \"GitHub Profile Visualizer\" in the Header is clicked, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_44",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Home link in the Header is clicked in the Repository Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_45",
       "evaluation_result": "INCORRECT",
       "title": "When the Home link in the Header is clicked in the Analysis Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_46",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Home link in the Header is clicked in the Repository Item Details Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_47",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repositories link in the Header is clicked in the Home Route, then the page should be navigated to Repository Route and consist of HTML main heading element with text content as the value of the key \"title\" from the GitHub user repositories details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_81",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the repository Route is successful, then the page should consist of at least two HTML list items, and the repositories List should be rendered using a unique key as a prop to display each repo item respectively",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_82",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML image element with alt attribute value as \"empty repositories\"",
-      "errorMessages": [
-        "TestingLibraryElementError: Unable to find an accessible element with the role \"img\" and name `/empty repositories/i`"
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_83",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML main heading element with text content as \"No Data Found\"",
-      "errorMessages": [
-        "TestingLibraryElementError: Unable to find an accessible element with the role \"heading\" and name `/No Data Found/i`"
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_84",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository Route is opened initially and the username in the Home Route is empty, then the page should consist of an HTML paragraph element with text content as \"GitHub username is empty, please provide a valid username for Repositories\"",
-      "errorMessages": [
-        "TestingLibraryElementError: Unable to find an element with the text: /GitHub username is empty, please provide a valid username for Repositories/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_85",
@@ -326,58 +272,48 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_87",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Home Route is successful and the Repositories Route is opened, then an HTTP GET request should be made to the GitHub User Repository Details API URL with path parameter as the username provided search input of the Home Route",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_88",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When \"/repositories\" is provided as the URL path when the username in the Home Route is empty, then the page should consist of an HTML image element with alt attribute value as \"empty repositories\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_89",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When \"/repositories\" is provided as the URL path when the username in the Home Route is valid, then the page should consist of an HTML main heading element with text content as \"Repositories\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_90",
       "evaluation_result": "INCORRECT",
       "title": "When \"/repositories\" is provided as the URL path when the username in the Home Route is invalid, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
       "errorMessages": [
-        "\nExpected: \"/repositories\"\nReceived: \"/repository\""
+        "Error: Unable to find role=\"img\""
       ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_91",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Home Route is successful and the Repositories Route is opened, an HTML container element with data-testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_92",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Repositories\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_93",
       "evaluation_result": "INCORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML image element with alt and src as the values of the keys \"login\" and \"avatar_url\" in owner from the GitHub user repository details responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "Error: Found multiple elements with the role \"img\" and name `/kentcdodds/i`"
       ]
     },
     {
@@ -385,7 +321,7 @@
       "evaluation_result": "INCORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"login\" in owner from the GitHub user repository details responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "Error: Unable to find role=\"heading\""
       ]
     },
     {
@@ -393,7 +329,7 @@
       "evaluation_result": "INCORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"name\" in language from the GitHub user repositories details responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected: \"P\"\nReceived: \"SPAN\""
       ]
     },
     {
@@ -401,7 +337,7 @@
       "evaluation_result": "INCORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"stargazers_count\" from the GitHub user repositories details responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected: \"P\"\nReceived: \"LI\""
       ]
     },
     {
@@ -409,7 +345,7 @@
       "evaluation_result": "INCORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"forks_count\" in language from the GitHub user repositories details responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected: \"P\"\nReceived: \"LI\""
       ]
     },
     {
@@ -425,39 +361,33 @@
       "evaluation_result": "INCORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request returns the repositories list as empty, then the page should consist of an HTML main heading element with text content as \"No Repositories Found\"",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "Error: Unable to find role=\"heading\""
       ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_100",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request made to GitHub user repository details API URL is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_101",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request made to GitHub user repository details API URL is unsuccessful, then the page should consist of an HTML paragraph element with text content as \"Something went wrong. Please try again\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_102",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request made to GitHub user repository details API URL is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_103",
       "evaluation_result": "INCORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request made to GitHub user repository details API URL is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to GitHub user repository details API URL",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected substring: \"https://apis2.ccbp.in/gpv/repos/kentcdodds\"\nReceived string:    \"https://apis2.ccbp.in/gpv/profile-details/kentcdodds?api_key=undefined\""
       ]
     },
     {
@@ -498,64 +428,54 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_54",
-      "evaluation_result": "CORRECT",
+      "evaluation_result": "INCORRECT",
       "title": "When a non-empty value is provided in an HTML search input element for search and an search button is clicked, an HTML container element with data-testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
-      "errorMessages": []
+      "errorMessages": [
+        "Error: The element(s) given to waitForElementToBeRemoved are already removed. waitForElementToBeRemoved requires that the element(s) exist(s) before waiting for removal."
+      ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_55",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML search input element with type attribute value as \"search\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_56",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML search icon button element with data-testid \"searchButton\" should be displayed",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_57",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as \"BIO\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_58",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as \"FOLLOWERS\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_59",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as \"FOLLOWING\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_60",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as \"PUBLIC REPOS\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_61",
       "evaluation_result": "INCORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as \"Company\"",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "TestingLibraryElementError: Found multiple elements with the text: /Company/i"
       ]
     },
     {
@@ -566,11 +486,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_63",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as \"Blog\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_64",
@@ -580,11 +498,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_65",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as \"Location\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_66",
@@ -594,11 +510,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_67",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of HTML image element with alt and src as the values of the keys \"name\" and \"avatar_url\" from the GitHub user profile details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_68",
@@ -644,11 +558,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_75",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of HTML paragraph element with text content as the value of the key \"blog\" from the GitHub user profile details responses received",
-      "errorMessages": [
-        "Error: Unable to find an element with the text: /https:\\/\\/kentcdodds.com/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_76",
@@ -658,27 +570,35 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_77",
-      "evaluation_result": "CORRECT",
+      "evaluation_result": "INCORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is unsuccessful, then the page should consist of an HTML search input element with type attribute value as \"search\"",
-      "errorMessages": []
+      "errorMessages": [
+        "Error: Unable to find role=\"img\""
+      ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_78",
-      "evaluation_result": "CORRECT",
+      "evaluation_result": "INCORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is unsuccessful, then the page should consist of an HTML search icon button element with data-testid \"searchButton\" should be displayed",
-      "errorMessages": []
+      "errorMessages": [
+        "Error: Unable to find role=\"img\""
+      ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_79",
-      "evaluation_result": "CORRECT",
+      "evaluation_result": "INCORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
-      "errorMessages": []
+      "errorMessages": [
+        "Error: Unable to find role=\"img\""
+      ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_80",
-      "evaluation_result": "CORRECT",
+      "evaluation_result": "INCORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is unsuccessful, then the page should consist of an HTML paragraph element with text content as \"Something went wrong. Please try again\"",
-      "errorMessages": []
+      "errorMessages": [
+        "Error: Unable to find an element with the text: /Something went wrong. Please try again/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
+      ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_7",
@@ -712,11 +632,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_12",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Home Route is successful and the Analysis Route is opened, then an HTTP GET request should be made to the GitHub user analysis API URL with path parameter as the username provided search input of the Home Route",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_13",
@@ -729,77 +647,65 @@
       "evaluation_result": "INCORRECT",
       "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is valid, then the page should consist of an HTML main heading element with text content as \"Analysis\"",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_15",
-      "evaluation_result": "CORRECT",
+      "evaluation_result": "INCORRECT",
       "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is invalid, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
-      "errorMessages": []
+      "errorMessages": [
+        "Error: Unable to find role=\"img\""
+      ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_16",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the HTTP GET request in the Home Route is successful and the Analysis Route is opened, an HTML container element with data-testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_17",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML image element with alt and src as the values of the keys \"login\" and \"avatarUrl\" in user from the GitHub user analysis details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_18",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"login\" in user from the GitHub user analysis details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_19",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Analysis\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_20",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Language Per Repos\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_21",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Language Per Commits\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_22",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as \"Commits Per Repo\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_23",
       "evaluation_result": "INCORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Line chart",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
@@ -807,71 +713,57 @@
       "evaluation_result": "INCORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Line chart with data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "Error: Unable to find an element with the text: /2012-Q1/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
       ]
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_25",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_26",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Language Per Repos\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_27",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Language Per Commits\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_28",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Pie chart with \"Commits Per Repo (Top 10)\" data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_29",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_30",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML paragraph element with text content as \"Something went wrong. Please try again\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_31",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
-      "errorMessages": [
-        "Error: Unable to find role=\"img\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_32",
       "evaluation_result": "INCORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to GitHub user analysis details API URL",
       "errorMessages": [
-        "Error: Unable to find role=\"img\""
+        "\nExpected substring: \"https://apis2.ccbp.in/gpv/profile-summary/kentcdodds\"\nReceived string:    \"https://apis2.ccbp.in/gpv/profile-details/kentcdodds?api_key=undefined\""
       ]
     },
     {

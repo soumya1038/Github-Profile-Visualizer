@@ -48,11 +48,24 @@ class Home extends Component {
 
     try {
       const response = await fetch(apiUrl, options)
-      const data = await response.json()
 
+      const data = await response.json()
       if (response.ok) {
+        const updatedData = {
+          avatarUrl: data.avatar_url,
+          bio: data.bio,
+          blog: data.blog,
+          company: data.company,
+          followers: data.followers,
+          following: data.following,
+          location: data.location,
+          login: data.login,
+          name: data.name,
+          organizationsUrl: data.organizations_url,
+          publicRepos: data.public_repos,
+        }
         this.setState({
-          userData: data,
+          userData: updatedData,
           apiStatus: apiStatusConstants.success,
         })
       } else {
@@ -119,16 +132,42 @@ class Home extends Component {
 
   onChangeInput = event => this.setState({inputUsername: event.target.value})
 
+  onClickSearch = () => {
+    const {changeUsername} = this.context
+    const {inputUsername} = this.state
+    if (inputUsername === '') {
+      this.setState({
+        isActiveError: true,
+        errorMsg: 'Enter the valid github username',
+        userData: [],
+      })
+    } else {
+      changeUsername(inputUsername)
+      this.getUserProfile(inputUsername)
+      this.setState({isActiveError: false, errorMsg: ''})
+    }
+  }
+
   render() {
     return (
       <UsernameContext.Consumer>
         {value => {
           const {username, changeUsername} = value
-          const {errorMsg, isActiveError, inputUsername} = this.state
+          const {errorMsg, isActiveError, inputUsername, userData} = this.state
+          const isListEmpty = userData.length === 0
 
           const onClickSearch = () => {
-            changeUsername(inputUsername)
-            this.getUserProfile(inputUsername)
+            if (inputUsername === '') {
+              this.setState({
+                isActiveError: true,
+                errorMsg: 'Enter the valid github username',
+                userData: [],
+              })
+            } else {
+              changeUsername(inputUsername)
+              this.getUserProfile(inputUsername)
+              this.setState({isActiveError: false, errorMsg: ''})
+            }
           }
 
           return (
@@ -144,7 +183,7 @@ class Home extends Component {
                         type="search"
                         placeholder="Enter github username"
                         onChange={this.onChangeInput}
-                        value={inputUsername || username}
+                        value={inputUsername}
                         className={`input ${isActiveError ? 'err' : ''}`}
                       />
                       <button
@@ -159,7 +198,7 @@ class Home extends Component {
                     </div>
                     {isActiveError && <p className="errorMsg">{errorMsg}</p>}
                   </div>
-                  {this.renderAllComponents()}
+                  {isListEmpty ? this.renderHome() : this.renderAllComponents()}
                 </div>
               </div>
             </>

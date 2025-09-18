@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import './index.css'
 
@@ -10,30 +10,30 @@ const Header = () => {
 
   return (
     <nav className="nav-container">
-      <Link to="/" exact className="nav-logo">
+      <NavLink to="/" exact className="nav-logo">
         <h1 className="header-heading">Github Profile Visualizer</h1>
-      </Link>
+      </NavLink>
 
       {/* Desktop menu */}
       <ul className="header-list">
         <li>
-          <Link to="/" exact activeClassName="active" className="nav-link">
+          <NavLink to="/" exact activeClassName="active" className="nav-link">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
             to="/repositories"
             activeClassName="active"
             className="nav-link"
           >
             Repositories
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/analysis" activeClassName="active" className="nav-link">
+          <NavLink to="/analysis" activeClassName="active" className="nav-link">
             Analysis
-          </Link>
+          </NavLink>
         </li>
       </ul>
 
@@ -51,7 +51,7 @@ const Header = () => {
       {isMenuOpen && (
         <ul className="mobile-menu">
           <li>
-            <Link
+            <NavLink
               to="/"
               exact
               activeClassName="active"
@@ -59,27 +59,27 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/repositories"
               activeClassName="active"
               className="nav-link"
               onClick={() => setIsMenuOpen(false)}
             >
               Repositories
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/analysis"
               activeClassName="active"
               className="nav-link"
               onClick={() => setIsMenuOpen(false)}
             >
               Analysis
-            </Link>
+            </NavLink>
           </li>
         </ul>
       )}
