@@ -40,45 +40,37 @@ class Home extends Component {
     })
 
     const apiUrl = `https://apis2.ccbp.in/gpv/profile-details/${username}?api_key=${process.env.REACT_APP_GIT_TOKEN}`
-
+    console.log(apiUrl)
     const options = {
       method: 'GET',
-      headers: {}, // ✅ lowercase
+      headers: {},
     }
 
-    try {
-      const response = await fetch(apiUrl, options)
-
-      const data = await response.json()
-      if (response.ok) {
-        const updatedData = {
-          avatarUrl: data.avatar_url,
-          bio: data.bio,
-          blog: data.blog,
-          company: data.company,
-          followers: data.followers,
-          following: data.following,
-          location: data.location,
-          login: data.login,
-          name: data.name,
-          organizationsUrl: data.organizations_url,
-          publicRepos: data.public_repos,
-        }
-        this.setState({
-          userData: updatedData,
-          apiStatus: apiStatusConstants.success,
-        })
-      } else {
-        this.setState({
-          errorMsg: data.error_msg,
-          apiStatus: apiStatusConstants.failure,
-          isActiveError: true,
-        })
+    const response = await fetch(apiUrl, options)
+    console.log(response)
+    const data = await response.json()
+    if (response.ok === true) {
+      const updatedData = {
+        avatarUrl: data.avatar_url,
+        bio: data.bio,
+        blog: data.blog,
+        company: data.company,
+        followers: data.followers,
+        following: data.following,
+        location: data.location,
+        login: data.login,
+        name: data.name,
+        organizationsUrl: data.organizations_url,
+        publicRepos: data.public_repos,
       }
-    } catch (error) {
       this.setState({
-        errorMsg: 'Something went wrong',
+        userData: updatedData,
+        apiStatus: apiStatusConstants.success,
+      })
+    } else {
+      this.setState({
         apiStatus: apiStatusConstants.failure,
+        errorMsg: data.error_msg,
         isActiveError: true,
       })
     }
@@ -94,7 +86,25 @@ class Home extends Component {
     this.getUserProfile(username)
   }
 
-  renderFailureView = () => <NoInternet onclickRetry={this.onclickRetry} />
+  renderFailureView = () => (
+    <div className="nointernet-container">
+      <img
+        src="https://res.cloudinary.com/dqtskutwx/image/upload/v1755620244/Frame_8830_1_kgnu6z.png"
+        alt="failure view"
+        className="nointernet-img"
+      />
+      <p className="nointernet-heading">
+        Something went wrong. Please try again
+      </p>
+      <button
+        className="try-again-button"
+        type="button"
+        onClick={this.onclickRetry}
+      >
+        Try Again
+      </button>
+    </div>
+  )
 
   renderHome = () => (
     <div className="home-img-container">
@@ -198,7 +208,7 @@ class Home extends Component {
                     </div>
                     {isActiveError && <p className="errorMsg">{errorMsg}</p>}
                   </div>
-                  {isListEmpty ? this.renderHome() : this.renderAllComponents()}
+                  {this.renderAllComponents()}
                 </div>
               </div>
             </>

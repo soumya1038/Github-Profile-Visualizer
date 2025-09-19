@@ -1,13 +1,13 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import Header from '../Header'
 import UsernameContext from '../../UsernameContext'
 import NoDataFound from '../NoDataFound'
 import LinearChart from '../LinearChart'
 import Piechart from '../Piechart'
-import NoInternet from '../NoInternet'
+// import NoInternet from '../NoInternet'
 
 import './index.css'
 
@@ -21,7 +21,7 @@ const apiStatusConstants = {
 class Analysis extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
-    repositoryData: [],
+    repositoryData: {},
   }
 
   componentDidMount() {
@@ -29,17 +29,17 @@ class Analysis extends Component {
     if (username === '') {
       this.renderNoRepoFound()
     } else {
-      this.renderGetRepoData()
+      this.getAnalysisData()
     }
   }
 
-  renderGetRepoData = async () => {
+  getAnalysisData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {username} = this.context
     const apiurl = `https://apis2.ccbp.in/gpv/profile-summary/${username}`
     const options = {
-      headers: {},
       method: 'GET',
+      headers: {},
     }
     const response = await fetch(apiurl, options)
     if (response.ok === true) {
@@ -57,10 +57,7 @@ class Analysis extends Component {
     <NoDataFound repoName="analysis" alt="empty analysis" />
   )
 
-  onclickRetry = () => {
-    const {username} = this.context
-    this.renderGetRepoData(username)
-  }
+  onclickRetryAnalysis = () => this.getAnalysisData()
 
   renderFailureView = () => (
     <div className="nointernet-container">
@@ -75,7 +72,7 @@ class Analysis extends Component {
       <button
         className="try-again-button"
         type="button"
-        onClick={this.onclickRetry}
+        onClick={this.onclickRetryAnalysis}
       >
         Try Again
       </button>
@@ -85,30 +82,35 @@ class Analysis extends Component {
   renderSuccess = () => {
     const {repositoryData} = this.state
     // Convert object → array for recharts
+
     const quarterCommitSlicedData = Object.entries(
       repositoryData.quarterCommitCount,
     ).map(([key, value]) => ({
       name: key,
-      commits: value,
+      quarterCommitCount: value, // <-- must match test
     }))
+
     const langRepoData = Object.entries(repositoryData.langRepoCount).map(
       ([name, value]) => ({
         name,
         value,
       }),
     )
+
     const langCommitData = Object.entries(repositoryData.langRepoCount).map(
       ([name, value]) => ({
         name,
         value,
       }),
     )
+
     const repoCommitData = Object.entries(repositoryData.repoCommitCount).map(
       ([name, value]) => ({
         name,
         value,
       }),
     )
+
     const {user} = repositoryData
     const analysisListLength = Object.keys(repoCommitData).length === 0
 
@@ -124,7 +126,8 @@ class Analysis extends Component {
           </div>
         ) : (
           <div>
-            <h1>analysis</h1>
+            <h1>Analysis</h1>
+            <Link to="/">Home</Link>
             <div>
               <h1>{user.login}</h1>
               <img

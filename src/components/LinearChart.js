@@ -27,7 +27,7 @@ export default function LinearChart({quarterCommitCount}) {
           <Tooltip />
           <Line
             type="monotone"
-            dataKey="commits"
+            dataKey="quarterCommitCount"
             stroke="#8884d8"
             activeDot={{r: 8}}
           />

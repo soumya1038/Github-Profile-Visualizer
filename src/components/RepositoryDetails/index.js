@@ -19,7 +19,7 @@ const apiStatusConstants = {
 class RepositoryDetails extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
-    repositoryData: [],
+    repositoryData: {},
   }
   // repoName: '',
 
@@ -48,6 +48,7 @@ class RepositoryDetails extends Component {
 
     const {username} = this.context
     const apiurl = `https://apis2.ccbp.in/gpv/specific-repo/${username}/${repoName}?api_key=${process.env.REACT_APP_GIT_TOKEN}`
+    console.log(apiurl)
     const options = {
       headers: {},
       method: 'GET',
@@ -55,21 +56,23 @@ class RepositoryDetails extends Component {
     const response = await fetch(apiurl, options)
     if (response.ok === true) {
       const data = await response.json()
+      console.log(data)
       const updatedData = {
         name: data.name,
         description: data.description,
-        languages: data.lanuages,
+        languages: data.lanuages || [],
         stargazersCount: data.stargazers_count,
         forksCount: data.forks_count,
         commitsCount: data.network_count,
         issuesCount: data.open_issues_count,
-        contributors: data.contributors.map(contributor => ({
+        contributors: (data.contributors || []).map(contributor => ({
           avatarUrl: contributor.avatar_url,
           id: contributor.id,
         })),
         owner: this.getOwner(data.owner),
         watchersCount: data.watchers_count,
       }
+
       this.setState({
         apiStatus: apiStatusConstants.success,
         repositoryData: updatedData,
@@ -84,7 +87,7 @@ class RepositoryDetails extends Component {
     <NoDataFound repoName="Repositories" alt="empty repositories" />
   )
 
-  onclickRetry = () => this.getRepoDetails()
+  tryRepoDetails = () => this.getRepoDetails()
 
   renderFailureView = () => (
     <div className="nointernet-container">
@@ -99,7 +102,7 @@ class RepositoryDetails extends Component {
       <button
         className="try-again-button"
         type="button"
-        onClick={this.onclickRetry}
+        onClick={this.tryRepoDetails}
       >
         Try Again
       </button>

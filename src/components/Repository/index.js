@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Header from '../Header'
 import UsernameContext from '../../UsernameContext'
 import NoDataFound from '../NoDataFound'
-import NoInternet from '../NoInternet'
+import RepoCard from '../RepoCard'
 import './index.css'
 
 const apiStatusConstants = {
@@ -18,7 +18,7 @@ const apiStatusConstants = {
 class Repository extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
-    repositoryData: {},
+    repositoryData: [],
   }
 
   componentDidMount() {
@@ -40,8 +40,8 @@ class Repository extends Component {
   renderGetRepoData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {username} = this.context
-    // const username = 'soumya1038'
     const apiurl = `https://apis2.ccbp.in/gpv/repos/${username}?api_key=${process.env.REACT_APP_GIT_TOKEN}`
+    console.log(apiurl)
     const options = {
       headers: {},
       method: 'GET',
@@ -56,6 +56,7 @@ class Repository extends Component {
           name: each.name,
           value: each.value,
         })),
+        id: eachItem.id,
         name: eachItem.name,
         owner: eachItem.owner,
         stargazersCount: eachItem.stargazers_count,
@@ -73,7 +74,7 @@ class Repository extends Component {
     <NoDataFound repoName="Repositories" alt="empty repositories" />
   )
 
-  onclickRetry = () => {
+  retryRepoData = () => {
     const {username} = this.context
     this.renderGetRepoData(username)
   }
@@ -91,7 +92,7 @@ class Repository extends Component {
       <button
         className="try-again-button"
         type="button"
-        onClick={this.onclickRetry}
+        onClick={this.retryRepoData}
       >
         Try Again
       </button>
@@ -100,6 +101,7 @@ class Repository extends Component {
 
   renderSuccess = () => {
     const {repositoryData} = this.state
+    console.log(repositoryData)
     const repositoriesLength = Object.keys(repositoryData).length === 0
     return (
       <div>
@@ -115,66 +117,11 @@ class Repository extends Component {
           <div className="repository-container">
             <h1 key="title">Repositories</h1>
             <div className="repository-list">
-              <ul>
-                {repositoryData.map(repo => {
-                  const {
-                    name,
-                    description,
-                    languages,
-                    stargazersCount,
-                    forksCount,
-                    owner,
-                  } = repo
-                  const {login} = owner
-
-                  return (
-                    <li key={name}>
-                      <Link className="link" to={`/repositories/${name}`}>
-                        <div className="repository-card">
-                          <div>
-                            <h1 className="repository-title">{name}</h1>
-                            <img
-                              src={owner.avatar_url}
-                              alt={login}
-                              className="repo-image"
-                            />
-                          </div>
-                          <p className="repository-description">
-                            {description}
-                          </p>
-
-                          <div className="language-tags">
-                            {languages.map(tags => (
-                              <p
-                                key={tags.value}
-                                className={`language-tag ${tags.name.toLowerCase()}`}
-                              >
-                                {tags.name}
-                              </p>
-                            ))}
-                          </div>
-                          <div className="stats">
-                            <div>
-                              <img
-                                src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757412650/Icon_e3w7ms.png"
-                                alt="star"
-                              />
-                              <p>{stargazersCount}</p>
-                            </div>
-                            <div>
-                              <img
-                                src="https://res.cloudinary.com/dqtskutwx/image/upload/v1757412650/Git_3_bax2ip.png"
-                                alt="fork"
-                              />
-                              <p>{forksCount}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    </li>
-                  )
-                })}
-              </ul>
+              <div>
+                {repositoryData.map(repo => (
+                  <RepoCard repositoryDetails={repo} key={repo.id} />
+                ))}
+              </div>
             </div>
           </div>
         )}

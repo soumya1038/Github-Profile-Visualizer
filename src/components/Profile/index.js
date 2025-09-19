@@ -47,7 +47,9 @@ const Profile = props => {
         </div>
         <div className="bottom-container">
           <div className="company-container">
-            <p className="company-heading">Company</p>
+            <p className="company-heading">
+              Company: <span>{company}</span>
+            </p>
             <div className="companyUrl">
               <RiBuildingLine className="icon-style" />
               <p className="company">{company}</p>
