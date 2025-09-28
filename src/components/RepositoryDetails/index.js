@@ -6,7 +6,7 @@ import Header from '../Header'
 import UsernameContext from '../../UsernameContext'
 import NoDataFound from '../NoDataFound'
 import Piechart from '../Piechart'
-import NoInternet from '../NoInternet'
+// import NoInternet from '../NoInternet'
 import './index.css'
 
 const apiStatusConstants = {
@@ -30,7 +30,7 @@ class RepositoryDetails extends Component {
     if (repoName === '') {
       this.renderNoRepoFound()
     } else {
-      this.getRepoDetails()
+      this.getRepositoryDetails()
     }
     // console.log(repoName)
   }
@@ -40,23 +40,21 @@ class RepositoryDetails extends Component {
     login: owner.login,
   })
 
-  getRepoDetails = async () => {
+  getRepositoryDetails = async () => {
+    console.log('repo-details (specific-repo) trigger')
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {
       params: {repoName},
     } = this.props
 
     const {username} = this.context
-    const apiurl = `https://apis2.ccbp.in/gpv/specific-repo/${username}/${repoName}?api_key=${process.env.REACT_APP_GIT_TOKEN}`
-    console.log(apiurl)
-    const options = {
-      headers: {},
-      method: 'GET',
-    }
-    const response = await fetch(apiurl, options)
+    const repoDetailsUrl = `https://apis2.ccbp.in/gpv/specific-repo/${username}/${repoName}`
+    // console.log(apiurl)
+
+    const response = await fetch(repoDetailsUrl)
     if (response.ok === true) {
       const data = await response.json()
-      console.log(data)
+      // console.log(data)
       const updatedData = {
         name: data.name,
         description: data.description,
@@ -87,10 +85,12 @@ class RepositoryDetails extends Component {
     <NoDataFound repoName="Repositories" alt="empty repositories" />
   )
 
-  tryRepoDetails = () => this.getRepoDetails()
+  onClickRetry = () => {
+    this.getRepositoryDetails()
+  }
 
   renderFailureView = () => (
-    <div className="nointernet-container">
+    <div>
       <img
         src="https://res.cloudinary.com/dqtskutwx/image/upload/v1755620244/Frame_8830_1_kgnu6z.png"
         alt="failure view"
@@ -100,9 +100,9 @@ class RepositoryDetails extends Component {
         Something went wrong. Please try again
       </p>
       <button
-        className="try-again-button"
         type="button"
-        onClick={this.tryRepoDetails}
+        onClick={this.getRepositoryDetails}
+        data-testid="repo-details-retry"
       >
         Try Again
       </button>
@@ -126,7 +126,7 @@ class RepositoryDetails extends Component {
 
     return (
       <div className="repo-success-container">
-        <div>
+        <div className="user-repodetails-container">
           <h1 className="repo-title">{name}</h1>
           <img src={avatarUrl} alt={login} className="repo-image" />
         </div>

@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 // import Languages from '../Languages'
-// import './index.css'
+import './index.css'
 
 const RepoCard = props => {
   const {repositoryDetails} = props
@@ -12,17 +12,16 @@ const RepoCard = props => {
     forksCount,
     owner,
   } = repositoryDetails
-  const {login} = owner
 
   return (
     <Link to={`/repositories/${name}`} className="repoLinkContainer">
       <div data-testid="repoItem" className="repo-item">
-        <div className={` repositoryItemContainer`} data-testid="repoItem">
+        <div className="repositoryItemContainer">
           <div className="repoHeaderContainer">
             <h1 className="repoItemHeading">{name}</h1>
             <img
               src={owner.avatar_url}
-              alt={`${login}-${name}`}
+              alt={`repository ${name}`}
               className="repoAvatarUrl"
             />
           </div>

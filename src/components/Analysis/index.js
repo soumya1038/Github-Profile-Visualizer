@@ -34,14 +34,12 @@ class Analysis extends Component {
   }
 
   getAnalysisData = async () => {
+    console.log('analysis trigger')
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {username} = this.context
     const apiurl = `https://apis2.ccbp.in/gpv/profile-summary/${username}`
-    const options = {
-      method: 'GET',
-      headers: {},
-    }
-    const response = await fetch(apiurl, options)
+
+    const response = await fetch(apiurl)
     if (response.ok === true) {
       const data = await response.json()
       this.setState({
@@ -57,10 +55,12 @@ class Analysis extends Component {
     <NoDataFound repoName="analysis" alt="empty analysis" />
   )
 
-  onclickRetryAnalysis = () => this.getAnalysisData()
+  onClickRetry = () => {
+    this.getAnalysisData()
+  }
 
   renderFailureView = () => (
-    <div className="nointernet-container">
+    <div>
       <img
         src="https://res.cloudinary.com/dqtskutwx/image/upload/v1755620244/Frame_8830_1_kgnu6z.png"
         alt="failure view"
@@ -70,9 +70,9 @@ class Analysis extends Component {
         Something went wrong. Please try again
       </p>
       <button
-        className="try-again-button"
         type="button"
-        onClick={this.onclickRetryAnalysis}
+        onClick={this.getAnalysisData}
+        data-testid="analysis-retry"
       >
         Try Again
       </button>
@@ -87,7 +87,7 @@ class Analysis extends Component {
       repositoryData.quarterCommitCount,
     ).map(([key, value]) => ({
       name: key,
-      quarterCommitCount: value, // <-- must match test
+      quarterCommitCount: value,
     }))
 
     const langRepoData = Object.entries(repositoryData.langRepoCount).map(
@@ -128,13 +128,16 @@ class Analysis extends Component {
           <div>
             <h1>Analysis</h1>
             <Link to="/">Home</Link>
-            <div>
-              <h1>{user.login}</h1>
+            <div className="user-container">
+              <h1 className="user-name">{user.login}</h1>
               <img
                 src={user.avatarUrl}
                 alt={user.login}
-                className="repo-image"
+                className="user-image"
               />
+            </div>
+            <div>
+              <p>Count</p>
             </div>
             <LinearChart quarterCommitCount={quarterCommitSlicedData} />
             <div>

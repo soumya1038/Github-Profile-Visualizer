@@ -14,6 +14,11 @@
   min-width: 85%;
   max-width: 900px;
 }
+.user-repodetails-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .repo-title {
   color: #3b82f6;
@@ -21,7 +26,10 @@
   font-weight: bold;
   margin-bottom: 8px;
 }
-
+.repo-image {
+  width: 50px;
+  border-radius: 50%;
+}
 .repo-description {
   font-size: 14px;
   margin-bottom: 16px;

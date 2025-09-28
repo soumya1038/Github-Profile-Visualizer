@@ -7,13 +7,19 @@
 .link {
   text-decoration: none;
 }
+.owner-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+}
 
 .repository-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
-.repo-image {
+.owner-avatar {
   width: 30px;
   border-radius: 50%;
 }

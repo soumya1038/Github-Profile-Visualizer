@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 import Header from '../Header'
 import UsernameContext from '../../UsernameContext'
@@ -27,26 +27,19 @@ class Repository extends Component {
     if (username === '') {
       this.renderNoRepoFound()
     } else {
-      this.renderGetRepoData()
+      this.getRepositoryData()
     }
     // console.log(username)
   }
 
-  // getOwner = owner => ({
-  //   avatarUrl: owner.avatar_url,
-  //   login: owner.login,
-  // })
-
-  renderGetRepoData = async () => {
+  getRepositoryData = async () => {
+    console.log('Repository triger')
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {username} = this.context
-    const apiurl = `https://apis2.ccbp.in/gpv/repos/${username}?api_key=${process.env.REACT_APP_GIT_TOKEN}`
-    console.log(apiurl)
-    const options = {
-      headers: {},
-      method: 'GET',
-    }
-    const response = await fetch(apiurl, options)
+    const reposUrl = `https://apis2.ccbp.in/gpv/repos/${username}`
+    // console.log(apiurl)
+
+    const response = await fetch(reposUrl)
     if (response.ok === true) {
       const data = await response.json()
       const updatedData = data.map(eachItem => ({
@@ -74,13 +67,12 @@ class Repository extends Component {
     <NoDataFound repoName="Repositories" alt="empty repositories" />
   )
 
-  retryRepoData = () => {
-    const {username} = this.context
-    this.renderGetRepoData(username)
+  onClickRetry = () => {
+    this.getRepositoryData()
   }
 
   renderFailureView = () => (
-    <div className="nointernet-container">
+    <div>
       <img
         src="https://res.cloudinary.com/dqtskutwx/image/upload/v1755620244/Frame_8830_1_kgnu6z.png"
         alt="failure view"
@@ -90,9 +82,9 @@ class Repository extends Component {
         Something went wrong. Please try again
       </p>
       <button
-        className="try-again-button"
         type="button"
-        onClick={this.retryRepoData}
+        onClick={this.getRepositoryData}
+        data-testid="repository-retry"
       >
         Try Again
       </button>
@@ -101,7 +93,7 @@ class Repository extends Component {
 
   renderSuccess = () => {
     const {repositoryData} = this.state
-    console.log(repositoryData)
+    // console.log(repositoryData)
     const repositoriesLength = Object.keys(repositoryData).length === 0
     return (
       <div>
@@ -116,6 +108,14 @@ class Repository extends Component {
         ) : (
           <div className="repository-container">
             <h1 key="title">Repositories</h1>
+            <div className="owner-details">
+              <img
+                src={repositoryData[0]?.owner?.avatar_url}
+                alt={repositoryData[0]?.owner?.login}
+                className="owner-avatar"
+              />
+              <h1>{repositoryData[0]?.owner?.login}</h1>
+            </div>
             <div className="repository-list">
               <div>
                 {repositoryData.map(repo => (

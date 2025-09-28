@@ -131,7 +131,7 @@
       "evaluation_result": "INCORRECT",
       "title": "When the HTTP GET request made to GitHub user repository details API URL in the Repository Item Details Route is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to GitHub user repository details API URL",
       "errorMessages": [
-        "\nExpected substring: \"https://apis2.ccbp.in/gpv/specific-repo/kentcdodds/.kenv\"\nReceived string:    \"https://apis2.ccbp.in/gpv/repos/kentcdodds?api_key=undefined\""
+        "\nExpected substring: \"https://apis2.ccbp.in/gpv/specific-repo/kentcdodds/.kenv\"\nReceived string:    \"https://apis2.ccbp.in/gpv/repos/kentcdodds\""
       ]
     },
     {
@@ -178,11 +178,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_14",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When \"/analysis\" is provided as the URL path when the username in the Home Route is valid, then the page should consist of an HTML main heading element with text content as \"Analysis\"",
-      "errorMessages": [
-        "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_15",
@@ -234,19 +232,15 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_23",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Line chart",
-      "errorMessages": [
-        "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_24",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an Line chart with data values of the key \"quarterCommitCount\" from the GitHub user analysis responses received",
-      "errorMessages": [
-        "Error: Unable to find an element with the text: /2012-Q1/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_25",
@@ -295,7 +289,7 @@
       "evaluation_result": "INCORRECT",
       "title": "When the Analysis route is opened with a valid username, and the HTTP GET request made to GitHub user analysis details API URL is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to GitHub user analysis details API URL",
       "errorMessages": [
-        "\nExpected substring: \"https://apis2.ccbp.in/gpv/profile-summary/kentcdodds\"\nReceived string:    \"https://apis2.ccbp.in/gpv/profile-details/kentcdodds?api_key=undefined\""
+        "\nExpected substring: \"https://apis2.ccbp.in/gpv/profile-summary/kentcdodds\"\nReceived string:    \"https://apis2.ccbp.in/gpv/profile-details/kentcdodds\""
       ]
     },
     {
@@ -372,19 +366,15 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_93",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML image element with alt and src as the values of the keys \"login\" and \"avatar_url\" in owner from the GitHub user repository details responses received",
-      "errorMessages": [
-        "Error: Found multiple elements with the role \"img\" and name `/kentcdodds/i`"
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_94",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"login\" in owner from the GitHub user repository details responses received",
-      "errorMessages": [
-        "Error: Unable to find role=\"heading\""
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_95",
@@ -439,7 +429,7 @@
       "evaluation_result": "INCORRECT",
       "title": "When the Repository route is opened with a valid username, and the HTTP GET request made to GitHub user repository details API URL is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to GitHub user repository details API URL",
       "errorMessages": [
-        "\nExpected substring: \"https://apis2.ccbp.in/gpv/repos/kentcdodds\"\nReceived string:    \"https://apis2.ccbp.in/gpv/profile-details/kentcdodds?api_key=undefined\""
+        "\nExpected substring: \"https://apis2.ccbp.in/gpv/repos/kentcdodds\"\nReceived string:    \"https://apis2.ccbp.in/gpv/profile-details/kentcdodds\""
       ]
     },
     {
@@ -480,11 +470,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_39",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "Analysis Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
-      "errorMessages": [
-        "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_40",
@@ -518,11 +506,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_45",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When the Home link in the Header is clicked in the Analysis Route, then the page should be navigated to Home Route and consist of an HTML image element with alt attribute value as \"gitHub profile visualizer home page\"",
-      "errorMessages": [
-        "Error: Unable to find an element with the text: /count/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_46",
@@ -616,11 +602,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_61",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of an HTML paragraph element with text content as \"Company\"",
-      "errorMessages": [
-        "TestingLibraryElementError: Found multiple elements with the text: /Company/i"
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_62",
@@ -696,11 +680,9 @@
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_74",
-      "evaluation_result": "INCORRECT",
+      "evaluation_result": "CORRECT",
       "title": "When a non-empty value is provided in search input and the search button is clicked, and the HTTP GET request is successful, then the page should consist of HTML paragraph element with text content as the value of the key \"company\" from the GitHub user profile details responses received",
-      "errorMessages": [
-        "Error: Found multiple elements with the text: /^@remix-run/i"
-      ]
+      "errorMessages": []
     },
     {
       "test_case_id": "RJSCPXLLA7_TEST_75",

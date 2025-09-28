@@ -5,7 +5,7 @@ import Loader from 'react-loader-spinner'
 import UsernameContext from '../../UsernameContext'
 import Header from '../Header'
 import Profile from '../Profile'
-import NoInternet from '../NoInternet'
+// import NoInternet from '../NoInternet'
 
 import './index.css'
 
@@ -33,21 +33,18 @@ class Home extends Component {
   }
 
   // Fetch profile for the given username
-  getUserProfile = async username => {
+  getUserProfile = async () => {
+    const {username} = this.context
+    console.log('Home Profile-details triggrt')
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
       isActiveError: false,
     })
+    const githubProfileUrl = `https://apis2.ccbp.in/gpv/profile-details/${username}`
+    // console.log(apiUrl)
 
-    const apiUrl = `https://apis2.ccbp.in/gpv/profile-details/${username}?api_key=${process.env.REACT_APP_GIT_TOKEN}`
-    console.log(apiUrl)
-    const options = {
-      method: 'GET',
-      headers: {},
-    }
-
-    const response = await fetch(apiUrl, options)
-    console.log(response)
+    const response = await fetch(githubProfileUrl)
+    // console.log(response)
     const data = await response.json()
     if (response.ok === true) {
       const updatedData = {
@@ -81,7 +78,7 @@ class Home extends Component {
     return <Profile userData={userData} />
   }
 
-  onclickRetry = () => {
+  onClickRetry = () => {
     const {username} = this.context
     this.getUserProfile(username)
   }
@@ -97,9 +94,9 @@ class Home extends Component {
         Something went wrong. Please try again
       </p>
       <button
-        className="try-again-button"
         type="button"
-        onClick={this.onclickRetry}
+        onClick={this.onClickRetry}
+        data-testid="home-retry-button"
       >
         Try Again
       </button>
@@ -164,7 +161,6 @@ class Home extends Component {
         {value => {
           const {username, changeUsername} = value
           const {errorMsg, isActiveError, inputUsername, userData} = this.state
-          const isListEmpty = userData.length === 0
 
           const onClickSearch = () => {
             if (inputUsername === '') {
@@ -188,12 +184,10 @@ class Home extends Component {
                   <div className="input-with-err">
                     <div className="home-search-container">
                       <input
-                        role="searchbox"
-                        aria-label="GitHub Username"
                         type="search"
                         placeholder="Enter github username"
                         onChange={this.onChangeInput}
-                        value={inputUsername}
+                        value={inputUsername || username}
                         className={`input ${isActiveError ? 'err' : ''}`}
                       />
                       <button
@@ -201,9 +195,8 @@ class Home extends Component {
                         className="search-icon-container"
                         onClick={onClickSearch}
                         data-testid="searchButton"
-                        aria-label="Search GitHub username"
                       >
-                        <HiOutlineSearch className="search-icon" />
+                        .<HiOutlineSearch className="search-icon" />
                       </button>
                     </div>
                     {isActiveError && <p className="errorMsg">{errorMsg}</p>}

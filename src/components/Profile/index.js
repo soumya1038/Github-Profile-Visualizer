@@ -47,28 +47,24 @@ const Profile = props => {
         </div>
         <div className="bottom-container">
           <div className="company-container">
-            <p className="company-heading">
-              Company: <span>{company}</span>
-            </p>
             <div className="companyUrl">
               <RiBuildingLine className="icon-style" />
-              <p className="company">{company}</p>
+              <p>Company</p>
+              <p>{company}</p>
             </div>
           </div>
           <div className="company-container">
             <p className="company-heading">Location</p>
             <div className="companyUrl">
               <IoLocationOutline className="icon-style" />
-              <p className="company">{location}</p>
+              <p>{location}</p>
             </div>
           </div>
           <div className="company-container">
-            <h1 className="company-heading">Company Url</h1>
+            <h1 className="url-heading">Organization Url</h1>
             <div className="companyUrl">
               <IoMdLink className="icon-style" />
-              <a href={organizationsUrl} className="company">
-                {organizationsUrl}
-              </a>
+              <a href={organizationsUrl}>{organizationsUrl}</a>
             </div>
           </div>
         </div>
