@@ -1,0 +1,117 @@
+/* Container */
+.repo-item {
+  color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Avatar */
+.avatar-url {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #fff;
+}
+
+/* Name and Login */
+.name {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 8px 0 5px;
+}
+
+.login {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* Bio & Blog */
+.bio {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin: 5px 0;
+}
+
+/* Followers, Following, Repos */
+.followers-following-public-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.followers-container,
+.following-container,
+.pubic-repos-container {
+  text-align: center;
+}
+
+.followers {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b82f6; /* blue highlight */
+}
+
+.followers-heading {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.hor-line {
+  border: none;
+  width: 1px;
+  height: 50px;
+  background-color: #333;
+}
+
+/* Bottom Section */
+.bottom-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  color: #fff;
+}
+
+.company-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.companyUrl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b0b0b0;
+}
+
+.companyUrl a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.companyUrl a:hover {
+  text-decoration: underline;
+}
+
+.icon-style {
+  font-size: 18px;
+  color: #fff;
+}
+
+.company-heading,
+.url-heading {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff;
+}

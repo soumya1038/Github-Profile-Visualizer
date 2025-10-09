@@ -1,0 +1,106 @@
+.repoLinkContainer {
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.repo-item {
+  background-color: #1e2233;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.repositoryItemContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.repoHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repoItemHeading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.repoAvatarUrl {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.repoItemDesc {
+  font-size: 14px;
+  color: #b0b3c0;
+  margin: 12px 0 16px 0;
+  line-height: 1.5;
+}
+
+.languagesListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.language {
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.style1 {
+  background-color: #e74c3c;
+}
+.style2 {
+  background-color: #3498db;
+}
+.style3 {
+  background-color: #2ecc71;
+}
+.style4 {
+  background-color: #9b59b6;
+}
+.style5 {
+  background-color: #f1c40f;
+}
+
+.repoCountContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.starContainer,
+.forksContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.start-image,
+.git-image {
+  width: 16px;
+  height: 16px;
+}
+
+.repoItemStar,
+.repoItemForks {
+  font-size: 14px;
+  color: #b0b3c0;
+  margin: 0;
+}
