@@ -1,0 +1,173 @@
+.repo-details-container {
+  background-color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.repo-success-container {
+  background-color: #ffffff0f;
+  color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  /* margin: 20px auto; */
+  min-width: 85%;
+  max-width: 900px;
+}
+.user-repodetails-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repo-title {
+  color: #3b82f6;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.repo-image {
+  width: 50px;
+  border-radius: 50%;
+}
+.repo-description {
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Language Tags */
+.language-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.language-tag {
+  background-color: #1f2937;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Stats Row */
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.stat-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
+
+/* Commit & Issues Counts */
+.counts-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.count-box {
+  border: 1px solid #444;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+}
+
+.count-label {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.count-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Contributors */
+.contributors-list {
+  list-style-type: none;
+  display: flex;
+}
+
+.contributors-section {
+  margin-bottom: 20px;
+}
+
+.contributors-title {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.contributors-count {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.contributor-item {
+  list-style-type: none;
+}
+
+.contributor-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Languages */
+.languages-section {
+  margin-top: 20px;
+}
+
+.languages-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .repo-success-container {
+    padding: 15px;
+  }
+
+  .counts-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stats {
+    gap: 12px;
+  }
+
+  .repo-title {
+    font-size: 20px;
+  }
+
+  .repo-description {
+    font-size: 13px;
+  }
+
+  .languages-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

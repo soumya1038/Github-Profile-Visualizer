@@ -1,0 +1,81 @@
+/*  */
+
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* width: 1440px; */
+  /* height: 1024px; */
+  background: #0f172a;
+}
+.notfound-image {
+  width: 677px;
+  height: 380px;
+  angle: 0 deg;
+  opacity: 1;
+  top: 194px;
+  left: 382px;
+  margin-bottom: 40px;
+}
+.notfound-heading {
+  width: 277px;
+  height: 48px;
+  angle: 0 deg;
+  opacity: 1;
+  top: 622px;
+  left: 582px;
+  font-family: HK Grotesk;
+  font-weight: 500;
+  font-size: 32px;
+  leading-trim: NONE;
+  line-height: 48px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+  margin: 0%;
+  margin-bottom: 10px;
+}
+.notfound-description {
+  width: 500px;
+  height: 64px;
+  angle: 0 deg;
+  opacity: 1;
+  top: 686px;
+  left: 470px;
+  font-family: HK Grotesk;
+  font-weight: 400;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #94a3b8;
+  margin: 0%;
+  margin-bottom: 20px;
+}
+.go-to-home-button {
+  width: 124;
+  height: 48;
+  angle: 0 deg;
+  opacity: 1;
+  border-radius: 12px;
+  gap: 8px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  background: #3b82f6;
+  font-family: HK Grotesk;
+  font-weight: 500;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

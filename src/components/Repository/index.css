@@ -1,0 +1,118 @@
+.repository-container {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 20px;
+  min-height: 100vh;
+}
+.link {
+  text-decoration: none;
+}
+.owner-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+}
+
+.repository-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.owner-avatar {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.repository-card {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.repository-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-bottom: 8px;
+}
+
+.repository-description {
+  font-size: 14px;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+/* Language tags */
+.language-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.language-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.reactjs {
+  background-color: #9333ea29;
+  color: #9333ea;
+}
+.java {
+  background-color: #22c55e29;
+  color: #22c55e;
+}
+.javascript {
+  background-color: #0284c729;
+  color: #0284c7;
+}
+.python {
+  background-color: #db277729;
+  color: #db2777;
+}
+.nodejs {
+  background-color: #c026d329;
+  color: #c026d3;
+}
+.htmlcss {
+  background-color: #f59e0b29;
+  color: #f59e0b;
+}
+
+/* Stats row */
+.stats {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-left: 0;
+}
+
+.stats li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #f8fafc;
+  list-style: none;
+}
+
+/* Loader alignment */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .repository-list {
+    grid-template-columns: 1fr;
+  }
+}

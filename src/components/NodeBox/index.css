@@ -1,0 +1,66 @@
+.commit-graph-container {
+  background-color: #0d1117;
+  color: #e6edf3;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+.commit-graph-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.commit-graph-subtitle {
+  color: #9ca3af;
+  margin-bottom: 25px;
+}
+
+/* Default empty squares */
+.react-calendar-heatmap .color-empty {
+  fill: #2e3440;
+}
+
+/* Dynamic color levels */
+.react-calendar-heatmap .color-level-0 {
+  fill: #54ca76;
+}
+.react-calendar-heatmap .color-level-1 {
+  fill: #31a4e6;
+}
+.react-calendar-heatmap .color-level-2 {
+  fill: #f5c452;
+}
+.react-calendar-heatmap .color-level-3 {
+  fill: #f2637f;
+}
+.react-calendar-heatmap .color-level-4 {
+  fill: #9261f3;
+}
+.react-calendar-heatmap .color-level-5 {
+  fill: #1322e7;
+}
+.react-calendar-heatmap .color-level-6 {
+  fill: #c413e7;
+}
+.react-calendar-heatmap .color-level-7 {
+  fill: #9ffd06;
+}
+.react-calendar-heatmap .color-level-8 {
+  fill: #f3f70e;
+}
+.react-calendar-heatmap .color-level-9 {
+  fill: #f7500e;
+}
+
+/* Tooltip styling */
+.__react_component_tooltip {
+  background-color: #1e1e2e !important;
+  color: #fff !important;
+  border: 1px solid #333;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+}
